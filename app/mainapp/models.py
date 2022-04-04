@@ -1,6 +1,6 @@
 from django.db import models
 
-class organization(models.Model):
+class Organization(models.Model):
     name = models.CharField(max_length=100)
     password = models.CharField(max_length=100)
     support_email = models.EmailField(max_length=100)
@@ -10,23 +10,23 @@ class organization(models.Model):
     def __str__(self):
         return self.name + " (org)"
 
-class vendor(models.Model):
+class Vendor(models.Model):
     name = models.CharField(max_length=100)
     dpa_url = models.URLField(max_length=200)
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
-    organization = models.ForeignKey(organization, on_delete=models.CASCADE)
+    organization = models.ForeignKey(Organization, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name + " (vend)"
 
-class stakeholder(models.Model):
+class Stakeholder(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
     pending = models.BooleanField(default=True)
-    organization = models.ForeignKey(organization, on_delete=models.CASCADE)
+    organization = models.ForeignKey(Organization, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name + " (stak)"

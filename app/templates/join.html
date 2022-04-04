@@ -1,0 +1,7 @@
+<h1>DPAlist</h1>
+<h2>Join</h2>
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_table }}
+    <input type="submit" value="Submit">
+</form>

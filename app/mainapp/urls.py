@@ -1,9 +1,12 @@
 from django.urls import path
 
 
-from .views import index
+from .views import (
+    index,
+    join,
+)
 
 urlpatterns = [
     path('', index, name='index'),
-    path('roadmap/', index, name='roadmap'),
+    path('join/', join, name='join'),
 ]
