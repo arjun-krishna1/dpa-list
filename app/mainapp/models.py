@@ -2,7 +2,7 @@ from django.db import models
 
 class organization(models.Model):
     name = models.CharField(max_length=100)
-    password = models.PasswordField(max_length=100)
+    password = models.CharField(max_length=100)
     support_email = models.EmailField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
