@@ -16,6 +16,7 @@ class Vendor(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
     organization = models.ForeignKey(Organization, on_delete=models.CASCADE)
+    pending = models.BooleanField(default=True)
 
     def __str__(self):
         return self.name + " (vend)"
@@ -25,7 +26,6 @@ class Stakeholder(models.Model):
     email = models.EmailField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
-    pending = models.BooleanField(default=True)
     organization = models.ForeignKey(Organization, on_delete=models.CASCADE)
 
     def __str__(self):

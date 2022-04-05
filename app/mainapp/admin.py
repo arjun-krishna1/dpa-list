@@ -1,3 +1,11 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import (
+    Organization,
+    Vendor,
+    Stakeholder,
+)
+
+admin.site.register(Organization)
+admin.site.register(Vendor)
+admin.site.register(Stakeholder)
