@@ -33,11 +33,11 @@ def join(request):
 def list_vendors(request, org_id: int):
     org = Organization.objects.get(id=org_id)
     vendors = Vendor.objects.filter(organization=org)
-
     context = {
         'vendors': vendors,
         'org': org,
     }
+    print(context)
     return render(request, 'list_vendors.html', context)
 
 def add_stakeholder(request, org_id: int):
